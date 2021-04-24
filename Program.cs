@@ -4,14 +4,16 @@ namespace project1
 {
     class Program
     {
+           const int rows = 3;
+           const int columns = 3;
         static void Main(string[] args)
         {
            Console.ForegroundColor = ConsoleColor.White;
            Console.WindowHeight = 40;
            
-           const int rows = 3;
+/*            const int rows = 3;
            const int columns = 3;
-
+ */
            bool gameRunning = true;
            int player = 1;
            int turnNumber = 0;
@@ -53,27 +55,27 @@ namespace project1
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                if(board[1,0] == 'X' && board[1,1] == board[1,0] && board[1,2] == board[1,0])
+                else if(board[1,0] == 'X' && board[1,1] == board[1,0] && board[1,2] == board[1,0])
                 {
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                if(board[2,0] == 'X' && board[2,1] == board[2,0] && board[2,2] == board[2,0])
+                else if(board[2,0] == 'X' && board[2,1] == board[2,0] && board[2,2] == board[2,0])
                 {
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                if(board[0,0] == 'X' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
+                else if(board[0,0] == 'X' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
                 {
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                if(board[0,1] == 'X' && board[1,1] == board[0,1] && board[2,1] == board[0,1])
+                else if(board[0,1] == 'X' && board[1,1] == board[0,1] && board[2,1] == board[0,1])
                 {
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                if(board[0,2] == 'X' && board[1,2] == board[0,2] && board[2,2] == board[0,1])
+                else if(board[0,2] == 'X' && board[1,2] == board[0,2] && board[2,2] == board[0,1])
                 {
                     gameWinner = 1;
                     gameRunning = false;
@@ -85,27 +87,27 @@ namespace project1
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                if(board[1,0] == 'O' && board[1,1] == board[1,0] && board[1,2] == board[1,0])
+                else if(board[1,0] == 'O' && board[1,1] == board[1,0] && board[1,2] == board[1,0])
                 {
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                if(board[2,0] == 'O' && board[2,1] == board[2,0] && board[2,2] == board[2,0])
+                else if(board[2,0] == 'O' && board[2,1] == board[2,0] && board[2,2] == board[2,0])
                 {
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                if(board[0,0] == 'O' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
+                else if(board[0,0] == 'O' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
                 {
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                if(board[0,1] == 'O' && board[1,1] == board[0,1] && board[2,1] == board[0,1])
+                else if(board[0,1] == 'O' && board[1,1] == board[0,1] && board[2,1] == board[0,1])
                 {
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                if(board[0,2] == 'O' && board[1,2] == board[0,2] && board[2,2] == board[0,1])
+                else if(board[0,2] == 'O' && board[1,2] == board[0,2] && board[2,2] == board[0,1])
                 {
                     gameWinner = 2;
                     gameRunning = false;
@@ -158,23 +160,46 @@ namespace project1
                     }
                 }
             } */
-
+            for (int i = 0; i < 3; i++)
+            {
+               for (int j = 0; j < 3; j++)
+               {
+                   board[i,j] = 'X';
+               }   
+            }
            
            
         }
 
         static void PrintBoard(char[,] board)
         {
-            for (int rows = 0; rows < 3; rows++)
+            for (int lines = 0; lines < columns; lines++)
+            {
+                Console.Write("----");
+            }
+            Console.Write("-");
+            Console.WriteLine();
+
+          
+            for (int row = 0; row < rows; row++)
             {
               Console.Write("| ");
-              for (int columns = 0; columns < 3; columns++)
+           
+              for (int col = 0; col < columns; col++)
               {
-                  Console.Write(board[rows,columns]);
+                  Console.Write(board[row,col]);
                   Console.Write(" | ");
               }   
               Console.WriteLine();
-            }
+           
+              for (int lines2 = 0; lines2 < rows; lines2++)
+              {
+                  Console.Write("----");
+              }
+              Console.Write("-");
+              Console.WriteLine();
+           }
+
         }
 
         static int PlayerSwitch(int player)
@@ -188,5 +213,6 @@ namespace project1
                 return 1;
             }
         }
+        
     }
 }
