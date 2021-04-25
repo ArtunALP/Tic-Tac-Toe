@@ -4,8 +4,8 @@ namespace project1
 {
     class Program
     {
-           const int rows = 20;
-           const int columns = 10;
+           const int rows = 3;
+           const int columns = 3;
         static void Main(string[] args)
         {
            Console.ForegroundColor = ConsoleColor.White;
