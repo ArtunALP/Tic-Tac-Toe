@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace project1
 {
     class Program
     {
-           const int rows = 3;
+           const int rows = 3; 
            const int columns = 3;
         static void Main(string[] args)
         {
@@ -13,14 +14,14 @@ namespace project1
            
 /*            const int rows = 3;
            const int columns = 3;
- */
+ */        int turnCount = 0;
            bool gameRunning = true;
            int player = 1;
-           int turnNumber = 0;
 
            int gameWinner = new int();
 
            char[,] board = new char[rows,columns];
+          // List<int> colCollection = new list<int>();
            
           
            Console.WriteLine("Welcome to Artun's Tic Tac Toe game!");
@@ -36,15 +37,29 @@ namespace project1
                  
                 if(player == 1)
                 {
+                    if(board[rowSelection,columnSelection] != 'X' && board[rowSelection,columnSelection] != 'O')
+                    {
                     board[rowSelection,columnSelection] = 'X';
-                    turnNumber ++;
+                    turnCount++;
                     player = PlayerSwitch(player);
+                    }
+                    else
+                    {
+                        player = 1;
+                    }
                 }
                 else if(player == 2)
                 {
+                    if(board[rowSelection,columnSelection] != 'X' && board[rowSelection,columnSelection] != 'O')
+                    {
                     board[rowSelection,columnSelection] = 'O';
-                    turnNumber++;
                     player = PlayerSwitch(player);
+                    turnCount++;
+                    }
+                    else
+                    {
+                        player = 2;
+                    }
                 }
 
                     Console.Clear();
@@ -65,7 +80,7 @@ namespace project1
                     gameWinner = 1;
                     gameRunning = false;
                 }
-                else if(board[0,0] == 'X' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
+                else if(board[0,0] == 'X' && board[1,0] == board[0,0] && board[2,0] == board[0,0])
                 {
                     gameWinner = 1;
                     gameRunning = false;
@@ -97,7 +112,7 @@ namespace project1
                     gameWinner = 2;
                     gameRunning = false;
                 }
-                else if(board[0,0] == 'O' && board[0,1] == board[0,0] && board[2,0] == board[0,0])
+                else if(board[0,0] == 'O' && board[1,0] == board[0,0] && board[2,0] == board[0,0])
                 {
                     gameWinner = 2;
                     gameRunning = false;
@@ -112,61 +127,37 @@ namespace project1
                     gameWinner = 2;
                     gameRunning = false;
                 }
+                
+                if(turnCount >= 9){
+                    gameWinner = 3;
+                    gameRunning = false;
+                }
+
+
            }
             
-/*             while(gameRunning == false)
-            {
+            
+            
                 Console.Clear();
                 if(gameWinner == 1)
                 {
-                    Console.WriteLine("Player 1 is the winner!");
+                    Console.WriteLine("Player 1 is the winner! Player 1 won after: " + turnCount + " turns.");
                     Console.WriteLine("Do you want to play again? type 'YES' if you do and type 'NO' to exit the game");
-                    string p1r = Console.ReadLine();
-                    if(p1r == "YES")
-                    {
-                        gameRunning = true;
-                    }
-                    else 
-                    {
-                        Console.ReadKey();
-                    }
+                    Console.ReadKey();
                 }
                 else if(gameWinner == 2)
                 {
-                    Console.WriteLine("Player 2 is the winner!");
+                    Console.WriteLine("Player 2 is the winner! Player 2 won after: " + turnCount + " turns.");
                     Console.WriteLine("Do you want to play again? type 'YES' if you do and type 'NO' to exit the game");
-                    string p2r = Console.ReadLine();
-                    if(p2r == "YES")
-                    {
-                        gameRunning = true;
-                    }
-                    else 
-                    {
-                        Console.ReadKey();
-                    }
+                    Console.ReadKey();
                 }
                 else
                 {
                     Console.WriteLine("The game is a draw.");
-                    Console.WriteLine("Do you want to play again? type 'YES' if you do and type 'NO' to exit the game");
-                    string nWr = Console.ReadLine();
-                    if(nWr == "YES")
-                    {
-                        gameRunning = true;
-                    }
-                    else 
-                    {
-                        Console.ReadKey();
-                    }
+                    Console.ReadKey();
                 }
-            } */
-            for (int i = 0; i < 3; i++)
-            {
-               for (int j = 0; j < 3; j++)
-               {
-                   board[i,j] = 'X';
-               }   
-            }
+             
+
            
            
         }
@@ -213,6 +204,5 @@ namespace project1
                 return 1;
             }
         }
-        
     }
 }
