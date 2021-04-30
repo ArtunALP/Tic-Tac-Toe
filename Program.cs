@@ -95,6 +95,16 @@ namespace project1
                     gameWinner = 1;
                     gameRunning = false;
                 }
+                else if(board[0,0] == 'X' && board[1,1] == board[0,0] && board[2,2] == board[0,0])
+                {
+                    gameWinner = 1;
+                    gameRunning = false;
+                }
+                else if(board[0,2] == 'X' && board[1,1] == board[0,2] && board[2,0] == board[0,2])
+                {
+                    gameWinner = 1;
+                    gameRunning = false;
+                }
                 
                 //win conditions for player 2
                 if(board[0,0] == 'O' && board[0,1] == board[0,0] && board[0,2] == board[0,0])
@@ -127,7 +137,18 @@ namespace project1
                     gameWinner = 2;
                     gameRunning = false;
                 }
+                else if(board[0,0] == 'O' && board[1,1] == board[0,0] && board[2,2] == board[0,0])
+                {
+                    gameWinner = 2;
+                    gameRunning = false;
+                }
+                else if(board[0,2] == 'O' && board[1,1] == board[0,2] && board[2,0] == board[0,2])
+                {
+                    gameWinner = 2;
+                    gameRunning = false;
+                }
                 
+                //in the case of a draw
                 if(turnCount >= 9){
                     gameWinner = 3;
                     gameRunning = false;
