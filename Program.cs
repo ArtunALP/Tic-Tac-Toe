@@ -79,7 +79,7 @@ namespace project1
                     }
                 }
 
-                if(rows == columns) //only check diagonals if rows == columns
+                if(!filled && rows == columns) //only check diagonals if rows == columns
                 {
                     filled = true;
                     for (int i = 0; i < rows; i++) // check for diagonal top left to bottom right

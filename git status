@@ -1,0 +1,67 @@
+[33mcommit 5a80484334e89db618e69a3ffa1c7ed76fe72d61[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Tue May 11 18:14:36 2021 +0800
+
+    Enabled winning diagonally for fully scalable board
+
+[33mcommit 029ae15d9a23232106b4d5a1a3e54ab0e6d93071[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Tue May 11 17:59:33 2021 +0800
+
+    Enabled diagonal winning for scalable board
+
+[33mcommit d41205043f08d682061bc333ffd3bac34f4f02a1[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Mon May 3 20:14:02 2021 +0800
+
+    board fully scalable, winnable for all sizes (no diagonal wins)
+
+[33mcommit a73e91103e4c8bac20ede603b6f5bb911faac290[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Sat May 1 19:21:27 2021 +0800
+
+    Board size fully changable and interactions fixed
+
+[33mcommit 0e06cd5ae5e364eb3d0e96da9e6711f57584f580[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Fri Apr 30 17:09:58 2021 +0800
+
+    Enable winning diagonally
+
+[33mcommit 09cd7c94feb8657c863f4459a22631f544ed76b8[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Fri Apr 30 07:36:30 2021 +0800
+
+    Can't place 'X' or 'O' on squares that are already taken.
+
+[33mcommit 6bfbca0185173ac2a57b44f318134bdac22c7546[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Sun Apr 25 08:29:26 2021 +0800
+
+    Revert "board size can be changed"
+    
+    This reverts commit 9e0bcc9f833ea5b8de7f11dbe8107d2309632362.
+
+[33mcommit 9e0bcc9f833ea5b8de7f11dbe8107d2309632362[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Sun Apr 25 08:27:50 2021 +0800
+
+    board size can be changed
+
+[33mcommit fe3751a13b37667ae54de535d094e00b5bec643f[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Sun Apr 25 02:49:34 2021 +0800
+
+    Scalable board
+
+[33mcommit 600b60583272216a098afddfe032572b08bbb18f[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Fri Apr 23 05:23:36 2021 -0700
+
+    Base gameplay
+
+[33mcommit 2cace1899fa7fd47d2296124624614314dfb921d[m
+Author: ArtunALP <artunalp1@gmail.com>
+Date:   Fri Apr 23 04:40:10 2021 -0700
+
+    first commit
